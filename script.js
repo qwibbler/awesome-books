@@ -54,7 +54,6 @@ function printBook(book) {
   const eachList = document.createElement('ul');
   const eachTitle = document.createElement('li');
   const eachAuthor = document.createElement('li');
-  const eachId = document.createElement('li');
   const eachRemove = document.createElement('li');
   const removeBtn = document.createElement('button');
 
@@ -62,7 +61,6 @@ function printBook(book) {
   eachBook.id = `${book.idCode}`
   eachList.appendChild(eachTitle);
   eachList.appendChild(eachAuthor);
-  eachList.appendChild(eachId);
   eachList.appendChild(eachRemove);
   eachRemove.appendChild(removeBtn);
   removeBtn.textContent = 'Remove';
@@ -71,7 +69,6 @@ function printBook(book) {
 
   eachTitle.innerHTML = book.title;
   eachAuthor.innerHTML = book.author;
-  eachId.innerHTML = `${book.idCode}`
 
   booksWrapper.appendChild(eachBook);
 }
