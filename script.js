@@ -1,26 +1,26 @@
+let collection = [
+  {
+    title: 'book1',
+    author: 'Zaman',
+    idCode: 0,
+  },
+  {
+    title: 'book2',
+    author: 'Jose',
+    idCode: 1,
+  },
+  {
+    title: 'book3',
+    author: 'Herrera',
+    idCode: 2,
+  },
+];
+let idCode = 3;
+
 function getValue() {
-  if (localStorage.getItem('collection')) {
-    collection = JSON.parse(localStorage.getItem('collection'));
-    idCode = JSON.parse(localStorage.getItem('idCode'))
-  } else {
-    let collection = [
-      {
-        title: 'book1',
-        author: 'Zaman',
-        idCode: 0,
-      },
-      {
-        title: 'book2',
-        author: 'Jose',
-        idCode: 1,
-      },
-      {
-        title: 'book3',
-        author: 'Herrera',
-        idCode: 2,
-      },
-    ];
-    let idCode = 3;
+  if (localStorage.collection) {
+    let collection = JSON.parse(localStorage.getItem('collection'));
+    let idCode = JSON.parse(localStorage.getItem('idCode'))
   }
 }
 
@@ -37,10 +37,15 @@ catchValue()
 
 const booksWrapper = document.querySelector('.books');
 
-function removeBook(book) {
-  collection.splice(book, 1);
-  console.log('i', book, 'ith book', booksWrapper.childNodes[book], 'i+1th book', booksWrapper.childNodes[book + 1])
-  booksWrapper.removeChild(booksWrapper.childNodes[book+1]);
+function removeBook(idCode) {
+  collection.filter(function (book) {
+    if (book.idCode === idCode){
+      index = collection.indexOf(book);
+      collection.splice(index.idCode, 1);
+    }
+  });
+  const toRemove = document.getElementById(`${idCode}`)
+  booksWrapper.removeChild(toRemove);
   catchValue();
 }
 
@@ -49,12 +54,15 @@ function printBook(book) {
   const eachList = document.createElement('ul');
   const eachTitle = document.createElement('li');
   const eachAuthor = document.createElement('li');
+  const eachId = document.createElement('li');
   const eachRemove = document.createElement('li');
   const removeBtn = document.createElement('button');
 
   eachBook.appendChild(eachList);
+  eachBook.id = `${book.idCode}`
   eachList.appendChild(eachTitle);
   eachList.appendChild(eachAuthor);
+  eachList.appendChild(eachId);
   eachList.appendChild(eachRemove);
   eachRemove.appendChild(removeBtn);
   removeBtn.textContent = 'Remove';
@@ -63,6 +71,7 @@ function printBook(book) {
 
   eachTitle.innerHTML = book.title;
   eachAuthor.innerHTML = book.author;
+  eachId.innerHTML = `${book.idCode}`
 
   booksWrapper.appendChild(eachBook);
 }
