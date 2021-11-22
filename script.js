@@ -18,10 +18,13 @@ let collection = [
 let idCode = 3;
 
 function getValue() {
-  if (localStorage.collection) {
-    let collection = JSON.parse(localStorage.getItem('collection'));
-    let idCode = JSON.parse(localStorage.getItem('idCode'))
+  if (localStorage.getItem('collection')) {
+    console.log('notNull', localStorage.getItem('collection'));
+    collection = JSON.parse(localStorage.getItem('collection'));
+    idCode = JSON.parse(localStorage.getItem('idCode'));
+    console.log('notNull', localStorage.getItem('collection'));
   }
+  catchValue();
 }
 
 getValue()
@@ -33,7 +36,7 @@ function catchValue() {
   localStorage.setItem('collection', saveCollection);
   localStorage.setItem('idCode', saveIdCode);
 }
-catchValue()
+// catchValue()
 
 const booksWrapper = document.querySelector('.books');
 
