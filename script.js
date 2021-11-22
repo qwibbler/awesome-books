@@ -38,10 +38,7 @@ function removeBook(book) {
   catchValue();
 }
 
-const allRemove = document.querySelectorAll('.remove-btn');
-for (let i = 0; i < allRemove.length; i += 1) {
-  allRemove[i]
-}
+
 
 function printBook(book) {
   const eachBook = document.createElement('div');
@@ -85,3 +82,8 @@ const addBtn = document.querySelector('#addBtn');
 addBtn.addEventListener('click', () => {
   addBook(title.value, author.value);
 })
+
+const allRemove = document.querySelectorAll('.remove-btn');
+for (let i = 0; i < allRemove.length; i += 1) {
+  allRemove[i].addEventListener('click', () => removeBook(i))
+}
