@@ -13,6 +13,17 @@ let collection = [
   },
 ];
 
+function catchValue() {
+  const saveCollection = JSON.stringify(collection);
+  localStorage.setItem('collection', saveCollection);
+}
+
+function getValue() {
+  collection = JSON.parse(localStorage.getItem('collection'))
+}
+
+window.onload = getValue;
+
 const booksWrapper = document.querySelector('.books');
 
 function printBook(book) {
@@ -43,6 +54,7 @@ for (let i = 0; i < collection.length; i += 1) {
 
 function addBook(title, author) {
   collection.push({ title: title, author: author });
+  catchValue();
 }
 
 const title = document.querySelector('#title');
@@ -55,17 +67,15 @@ addBtn.addEventListener('click', () => {
 })
 
 function removeBook(book) {
-  console.log('before', collection)
   collection = collection.splice(book, 1);
-  console.log('after', collection)
-  console.log(booksWrapper.childNodes[book]);
   booksWrapper.removeChild(booksWrapper.childNodes[book+1]);
+  catchValue();
 }
+
 
 const allRemove = document.querySelectorAll('.remove-btn');
 for (let i = 0; i < allRemove.length; i += 1){
   allRemove[i].addEventListener('click', () => {
     removeBook(i)
-    console.log('Removed')
   })
 }
