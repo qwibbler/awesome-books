@@ -1,15 +1,15 @@
-const collection = [
+let collection = [
   {
-    title: book1,
-    author: Zaman,
+    title: 'book1',
+    author: 'Zaman',
   },
   {
-    title: book2,
-    author: Jose,
+    title: 'book2',
+    author: 'Jose',
   },
   {
-    title: book3,
-    author: Herrera,
+    title: 'book3',
+    author: 'Herrera',
   },
 ];
 
@@ -21,11 +21,15 @@ function printBook(book) {
   const eachTitle = document.createElement('li');
   const eachAuthor = document.createElement('li');
   const eachRemove = document.createElement('li');
-
+  const removeBtn = document.createElement('button');
+  
   eachBook.appendChild(eachList);
   eachList.appendChild(eachTitle);
   eachList.appendChild(eachAuthor);
   eachList.appendChild(eachRemove);
+  eachRemove.appendChild(removeBtn);
+  removeBtn.textContent = 'Remove';
+  removeBtn.className = 'remove-btn'
 
   eachTitle.innerHTML = book.title;
   eachAuthor.innerHTML = book.author;
@@ -33,7 +37,7 @@ function printBook(book) {
   booksWrapper.appendChild(eachBook);
 }
 
-for (let i = 0; i < collection.length; i++) {
+for (let i = 0; i < collection.length; i += 1) {
   printBook(collection[i]);
 }
 
@@ -47,4 +51,21 @@ const addBtn = document.querySelector('#addBtn');
 
 addBtn.addEventListener('click', () => {
   addBook(title.value, author.value);
+  printBook(collection[collection.length-1]);
 })
+
+function removeBook(book) {
+  console.log('before', collection)
+  collection = collection.splice(book, 1);
+  console.log('after', collection)
+  console.log(booksWrapper.childNodes[book]);
+  booksWrapper.removeChild(booksWrapper.childNodes[book+1]);
+}
+
+const allRemove = document.querySelectorAll('.remove-btn');
+for (let i = 0; i < allRemove.length; i += 1){
+  allRemove[i].addEventListener('click', () => {
+    removeBook(i)
+    console.log('Removed')
+  })
+}
