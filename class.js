@@ -1,16 +1,19 @@
 const booksWrapper = document.querySelector('.books');
 
-class collection {
+class Collection {
   constructor() {
     this.collection = [];
     this.idCode = 0;
   }
-  
-  book(title, author, idCode) {
-    
-    this.title = title;
-    this.author = author;
-    this.id = idCode;
+
+  book(title, author) {
+    const book = {
+      title,
+      author,
+      id: this.idCode,
+    };
+    this.idCode += 1;
+    return book;
   }
 
   // Local storage save
@@ -32,9 +35,8 @@ class collection {
 
   // Add books
   addBook(title, author) {
-    const NewBook = new book(title, author, this.idCode);
+    const NewBook = this.book(title, author);
     this.collection.push(NewBook);
-    this.idCode += 1;
     this.catchValue();
 
     // Print book
@@ -52,7 +54,7 @@ class collection {
   removeBook(bookId) {
     const deleteBook = this.getBookById(bookId);
     this.collection.splice(deleteBook[1], 1);
-    
+
     // Remove from print
     const toRemove = document.getElementById(`${bookId}`);
     booksWrapper.removeChild(toRemove);
@@ -97,7 +99,7 @@ class collection {
   }
 }
 
-const MyCollection = new collection();
+const MyCollection = new Collection();
 MyCollection.getValue();
 MyCollection.printAll();
 
