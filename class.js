@@ -6,84 +6,75 @@ class book {
     this.author = author;
     this.id = idCode;
   }
-
-  // static idCode() {
-  //   if (idCode) {
-  //     idCode += 1;
-  //   } else {
-  //     let idCode = 0;
-  //   }
-  // }
-
 }
 
 class collection {
   constructor() {
     this.collection = [];
+    this.idCode = 0;
   }
 
   // Local storage save
   catchValue() {
     const saveCollection = JSON.stringify(this.collection);
-    const saveIdCode = JSON.stringify(idCode);
+    const saveIdCode = JSON.stringify(this.idCode);
     localStorage.setItem('collection', saveCollection);
     localStorage.setItem('idCode', saveIdCode);
   }
-
+  
   // Local storage get
   getValue() {
-    let idCode = 0
     if (localStorage.getItem('collection')) {
       this.collection = JSON.parse(localStorage.getItem('collection'));
-      idCode = JSON.parse(localStorage.getItem('idCode'));
+      this.idCode = JSON.parse(localStorage.getItem('idCode'));
     }
   }
 
   // Add books
-  addBook(title, author, idCode) {
-    const newBook = new book(title, author);
+  addBook(title, author, id) {
+    const newBook = new book(title, author, id);
     this.collection.push(newBook);
-    idCode += 1;
+    this.idCode += 1;
   }
 
   // Get book
-  getBookById(idCode) {
-    this.collection.filter((book) => {
-      console.log('Get Book');
-      console.log('Collection', this.collection);
-      console.log('idCode', idCode);
-      console.log('Book', book.idCode, idCode);
-      return book.idCode === idCode;
-      // if (book.idCode === idCode) {
-      //   const index = this.collection.indexOf(book);
-      //   console.log('Index', index);
-      // }
-      // return book;
-      // console.log('Returned!')
-    })
-    console.log('new_Collection', this.collection)
-  }
+  // getBookById(bookId) {
+  //   console.log('Get Book');
+  //   console.log('Collection', this.collection);
+  //   console.log('bookId', bookId);
+  //   const found = this.collection.filter(book => book.id === bookId)
+  //     // if (book.id === this.idCode) {
+  //     //   const index = this.collection.indexOf(book);
+  //     //   console.log('Index', index);
+  //     // }
+  //     // return book;
+  //     // console.log('Returned!')
+  //   console.log('Book found', found);
+  // }
 
   // Remove book
-  removeBook(idCode) {
-    const removeBook = this.getBookById(idCode);
-    console.log('Remove it!', removeBook)
-    this.collection.filter((book) => { this.removeBook(book); });
-    console.log('newCollection', this.collection)
+  removeBook(bookId) {
+    // const deleteBook = this.getBookById(bookId);
+    // console.log('Remove it!', deleteBook)
+    // this.collection.filter((book) => { book === deleteBook });
+    // console.log('newCollection', this.collection)
 
-    // this.filter((book) => {
-    //   if (book.idCode === idCode) {
-    //     const index = collection.indexOf(book);
-    //     collection.splice(index, 1);
-    //   }
-    //   return book;
+    console.log('Collection', this.collection.length);
+    console.log('bookId', bookId);
+    this.collection.filter((book) => {
+      if (book.id === bookId) {
+        console.log('id', book.id, bookId)
+        const index = this.collection.indexOf(book);
+        this.collection.splice(index, 1);
+      }
+      return book;
+    });
+    console.log('newCollection', this.collection.length)
 
-    // });
     // Remove from print
-
-    const toRemove = document.getElementById(`${idCode}`);
+    const toRemove = document.getElementById(`${bookId}`);
     booksWrapper.removeChild(toRemove);
-    catchValue();
+    // catchValue();
   }
 
   printBook(book) {
@@ -98,7 +89,7 @@ class collection {
     // Append elements
     eachBook.appendChild(eachList);
     eachList.appendChild(eachTitle);
-    eachList.id = `${book.idCode}`;
+    eachList.id = `${book.id}`;
     eachList.appendChild(eachAuthor);
     eachList.appendChild(eachRemove);
     eachRemove.appendChild(removeBtn);
@@ -111,7 +102,7 @@ class collection {
     removeBtn.className = 'remove-btn';
 
     // Add event listener
-    removeBtn.addEventListener('click', () => this.removeBook(book.idCode));
+    removeBtn.addEventListener('click', () => this.removeBook(book.id));
   }
 
   printAll() {
