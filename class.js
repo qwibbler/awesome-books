@@ -36,13 +36,11 @@ class collection {
     console.log('Added', title, author, this.idCode);
     const newBook = new book(title, author, this.idCode);
     console.log('newBook', newBook);
-    console.log('collection', this.collection.length);
     this.collection.push(newBook);
-    console.log('newcollection', this.collection.length);
-    console.log('idCode', this.idCode);
     this.idCode += 1;
     console.log('newidCode', this.idCode);
-    this.catchValue()
+    this.catchValue();
+    this.printBook(this.collection[this.collection.length - 1]);
   }
 
   // Get book
