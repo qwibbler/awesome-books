@@ -38,38 +38,40 @@ class collection {
   }
 
   // Get book
-  // getBookById(bookId) {
-  //   console.log('Get Book');
-  //   console.log('Collection', this.collection);
-  //   console.log('bookId', bookId);
-  //   const found = this.collection.filter(book => book.id === bookId)
-  //     // if (book.id === this.idCode) {
-  //     //   const index = this.collection.indexOf(book);
-  //     //   console.log('Index', index);
-  //     // }
-  //     // return book;
-  //     // console.log('Returned!')
-  //   console.log('Book found', found);
-  // }
+  getBookById(bookId) {
+    console.log('Get Book');
+    console.log('Collection', this.collection.length);
+    console.log('bookId', bookId);
+    const found = this.collection.filter(book => book.id === bookId);
+    const index = this.collection.indexOf(found);
+      // if (book.id === this.idCode) {
+      //   const index = this.collection.indexOf(book);
+      //   console.log('Index', index);
+      // }
+      // return book;
+      // console.log('Returned!')
+    console.log('Book found', found, this.collection.length);
+    return found, index;
+  }
 
   // Remove book
   removeBook(bookId) {
-    // const deleteBook = this.getBookById(bookId);
-    // console.log('Remove it!', deleteBook)
-    // this.collection.filter((book) => { book === deleteBook });
-    // console.log('newCollection', this.collection)
-
-    console.log('Collection', this.collection.length);
-    console.log('bookId', bookId);
-    this.collection.filter((book) => {
-      if (book.id === bookId) {
-        console.log('id', book.id, bookId)
-        const index = this.collection.indexOf(book);
-        this.collection.splice(index, 1);
-      }
-      return book;
-    });
+    const deleteBook = this.getBookById(bookId);
+    console.log('Remove it!', deleteBook)
+    this.collection.splice(deleteBook[1], 1);
     console.log('newCollection', this.collection.length)
+
+    // console.log('Collection', this.collection.length);
+    // console.log('bookId', bookId);
+    // this.collection.filter((book) => {
+    //   if (book.id === bookId) {
+    //     console.log('id', book.id, bookId)
+    //     const index = this.collection.indexOf(book);
+    //     this.collection.splice(index, 1);
+    //   }
+    //   return book;
+    // });
+    // console.log('newCollection', this.collection.length)
 
     // Remove from print
     const toRemove = document.getElementById(`${bookId}`);
