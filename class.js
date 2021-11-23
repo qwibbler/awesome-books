@@ -33,13 +33,12 @@ class collection {
 
   // Add books
   addBook(title, author) {
-    console.log('Added', title, author, this.idCode);
     const newBook = new book(title, author, this.idCode);
-    console.log('newBook', newBook);
     this.collection.push(newBook);
     this.idCode += 1;
-    console.log('newidCode', this.idCode);
     this.catchValue();
+
+    // Print book
     this.printBook(this.collection[this.collection.length - 1]);
   }
 
@@ -50,12 +49,6 @@ class collection {
     console.log('bookId', bookId);
     const found = this.collection.filter((book) => book.id === bookId);
     const index = this.collection.indexOf(found);
-    // if (book.id === this.idCode) {
-    //   const index = this.collection.indexOf(book);
-    //   console.log('Index', index);
-    // }
-    // return book;
-    // console.log('Returned!')
     console.log('Book found', found, this.collection.length);
     return found, index;
   }
@@ -66,18 +59,6 @@ class collection {
     console.log('Remove it!', deleteBook);
     this.collection.splice(deleteBook[1], 1);
     console.log('newCollection', this.collection.length);
-
-    // console.log('Collection', this.collection.length);
-    // console.log('bookId', bookId);
-    // this.collection.filter((book) => {
-    //   if (book.id === bookId) {
-    //     console.log('id', book.id, bookId)
-    //     const index = this.collection.indexOf(book);
-    //     this.collection.splice(index, 1);
-    //   }
-    //   return book;
-    // });
-    // console.log('newCollection', this.collection.length)
 
     // Remove from print
     const toRemove = document.getElementById(`${bookId}`);
@@ -128,11 +109,11 @@ myCollection.getValue();
 myCollection.printAll();
 
 // Get inputs
-const title = document.querySelector('#title');
-const author = document.querySelector('#author');
+const title = document.querySelector('#title').value;
+const author = document.querySelector('#author').value;
 const addBtn = document.querySelector('#addBtn');
 
 // On click, add book to collection
 addBtn.addEventListener('click', () => {
-  myCollection.addBook(title.value, author.value);
+  myCollection.addBook(title, author);
 });
