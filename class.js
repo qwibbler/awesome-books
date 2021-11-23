@@ -21,20 +21,28 @@ class collection {
     localStorage.setItem('collection', saveCollection);
     localStorage.setItem('idCode', saveIdCode);
   }
-  
+
   // Local storage get
   getValue() {
     if (localStorage.getItem('collection')) {
       this.collection = JSON.parse(localStorage.getItem('collection'));
       this.idCode = JSON.parse(localStorage.getItem('idCode'));
     }
+    this.catchValue();
   }
 
   // Add books
-  addBook(title, author, id) {
-    const newBook = new book(title, author, id);
+  addBook(title, author) {
+    console.log('Added', title, author, this.idCode);
+    const newBook = new book(title, author, this.idCode);
+    console.log('newBook', newBook);
+    console.log('collection', this.collection.length);
     this.collection.push(newBook);
+    console.log('newcollection', this.collection.length);
+    console.log('idCode', this.idCode);
     this.idCode += 1;
+    console.log('newidCode', this.idCode);
+    this.catchValue()
   }
 
   // Get book
@@ -42,14 +50,14 @@ class collection {
     console.log('Get Book');
     console.log('Collection', this.collection.length);
     console.log('bookId', bookId);
-    const found = this.collection.filter(book => book.id === bookId);
+    const found = this.collection.filter((book) => book.id === bookId);
     const index = this.collection.indexOf(found);
-      // if (book.id === this.idCode) {
-      //   const index = this.collection.indexOf(book);
-      //   console.log('Index', index);
-      // }
-      // return book;
-      // console.log('Returned!')
+    // if (book.id === this.idCode) {
+    //   const index = this.collection.indexOf(book);
+    //   console.log('Index', index);
+    // }
+    // return book;
+    // console.log('Returned!')
     console.log('Book found', found, this.collection.length);
     return found, index;
   }
@@ -57,9 +65,9 @@ class collection {
   // Remove book
   removeBook(bookId) {
     const deleteBook = this.getBookById(bookId);
-    console.log('Remove it!', deleteBook)
+    console.log('Remove it!', deleteBook);
     this.collection.splice(deleteBook[1], 1);
-    console.log('newCollection', this.collection.length)
+    console.log('newCollection', this.collection.length);
 
     // console.log('Collection', this.collection.length);
     // console.log('bookId', bookId);
@@ -76,7 +84,7 @@ class collection {
     // Remove from print
     const toRemove = document.getElementById(`${bookId}`);
     booksWrapper.removeChild(toRemove);
-    // catchValue();
+    this.catchValue();
   }
 
   printBook(book) {
@@ -128,5 +136,5 @@ const addBtn = document.querySelector('#addBtn');
 
 // On click, add book to collection
 addBtn.addEventListener('click', () => {
-  addBook(title.value, author.value);
+  myCollection.addBook(title.value, author.value);
 });
