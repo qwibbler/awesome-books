@@ -1,17 +1,16 @@
 const booksWrapper = document.querySelector('.books');
 
-class book {
-  constructor(title, author, idCode) {
-    this.title = title;
-    this.author = author;
-    this.id = idCode;
-  }
-}
-
 class collection {
   constructor() {
     this.collection = [];
     this.idCode = 0;
+  }
+  
+  book(title, author, idCode) {
+    
+    this.title = title;
+    this.author = author;
+    this.id = idCode;
   }
 
   // Local storage save
@@ -33,8 +32,8 @@ class collection {
 
   // Add books
   addBook(title, author) {
-    const newBook = new book(title, author, this.idCode);
-    this.collection.push(newBook);
+    const NewBook = new book(title, author, this.idCode);
+    this.collection.push(NewBook);
     this.idCode += 1;
     this.catchValue();
 
@@ -44,22 +43,16 @@ class collection {
 
   // Get book
   getBookById(bookId) {
-    console.log('Get Book');
-    console.log('Collection', this.collection.length);
-    console.log('bookId', bookId);
     const found = this.collection.filter((book) => book.id === bookId);
     const index = this.collection.indexOf(found);
-    console.log('Book found', found, this.collection.length);
-    return found, index;
+    return [found, index];
   }
 
   // Remove book
   removeBook(bookId) {
     const deleteBook = this.getBookById(bookId);
-    console.log('Remove it!', deleteBook);
     this.collection.splice(deleteBook[1], 1);
-    console.log('newCollection', this.collection.length);
-
+    
     // Remove from print
     const toRemove = document.getElementById(`${bookId}`);
     booksWrapper.removeChild(toRemove);
@@ -104,16 +97,16 @@ class collection {
   }
 }
 
-const myCollection = new collection();
-myCollection.getValue();
-myCollection.printAll();
+const MyCollection = new collection();
+MyCollection.getValue();
+MyCollection.printAll();
 
 // Get inputs
-const title = document.querySelector('#title').value;
-const author = document.querySelector('#author').value;
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
 const addBtn = document.querySelector('#addBtn');
 
 // On click, add book to collection
 addBtn.addEventListener('click', () => {
-  myCollection.addBook(title, author);
+  MyCollection.addBook(title.value, author.value);
 });
