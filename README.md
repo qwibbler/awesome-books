@@ -32,8 +32,8 @@ Additional description about the project and its features.
 👤 **Jose Fernando Herrera**
 
 - GitHub: [@joseheco](https://github.com/joseheco)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Twitter: [@joseheco](https://twitter.com/joseheco)
+- LinkedIn: [Jose Herrera](https://linkedin.com/in/joseherreraco)
 
 ## 🤝 Contributing
 
