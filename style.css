@@ -8,6 +8,8 @@ h1 {
 
 .books {
   border: 2px solid black;
+  width: 95%;
+  margin: auto;
 }
 
 ul {
@@ -34,6 +36,7 @@ ul:nth-child(odd) {
 
 hr {
   width: 35%;
+  max-width: 7rem;
   margin: 3rem auto 1rem auto;
   border: 1px solid gray;
   background-color: gray;
@@ -41,6 +44,7 @@ hr {
 
 input {
   width: 75%;
+  max-width: 16rem;
   margin-bottom: 0.5rem;
   padding: 0.2rem;
 }
