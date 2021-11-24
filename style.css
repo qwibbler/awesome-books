@@ -44,9 +44,8 @@ ul {
   list-style: none;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem ;
+  padding: 1rem;
   margin: 0;
-  
 }
 
 ul:nth-child(odd) {
@@ -86,7 +85,7 @@ button {
   border: 2px solid black;
   border-radius: 5px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.644);
-  padding: 0.25rem
+  padding: 0.25rem;
 }
 
 .remove-btn {
@@ -98,5 +97,5 @@ button {
 }
 
 .remove-btn:active {
-  background-color: rgb(255, 115, 0)
+  background-color: rgb(255, 115, 0);
 }
