@@ -8,7 +8,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 header {
@@ -92,10 +92,14 @@ button {
   background-color: transparent;
 }
 
-.remove-btn:hover {
+button:hover {
   background-color: rgb(255, 196, 0);
 }
 
-.remove-btn:active {
+button:active {
   background-color: rgb(255, 115, 0);
+}
+
+#addBtn:active {
+  background-color: rgb(172, 93, 28);
 }
