@@ -32,11 +32,15 @@ ul:nth-child(odd) {
   margin: auto;
 }
 
-input {
-  margin-bottom: 0.5rem;
-  padding: 0.2rem;
-  
+hr {
+  width: 35%;
+  margin: 3rem auto 1rem auto;
+  border: 1px solid gray;
+  background-color: gray;
 }
 
-
-
+input {
+  width: 75%;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem;
+}
