@@ -14,10 +14,29 @@ ul {
   display: flex;
   list-style: none;
   justify-content: space-between;
-  padding: 0.1rem 2rem 0 2rem;
-}
-
-.remove-btn {
+  padding: 1rem ;
+  margin: 0;
   
 }
+
+ul:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.addBook {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 50%;
+  align-items: center;
+  margin: auto;
+}
+
+input {
+  margin-bottom: 0.5rem;
+  padding: 0.2rem;
+  
+}
+
+
 
