@@ -2,44 +2,75 @@
   box-sizing: border-box;
 }
 
+body {
+  background: url(./img/library_background.jpg), rgba(245, 208, 108, 0.103);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  width: max-content;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: rgba(245, 209, 108, 0.664);
+}
+
 h1 {
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .books {
   border: 2px solid black;
   width: 95%;
   margin: auto;
+  overflow-y: auto;
+  background: url(../img/background_parchment.jpg), rgba(119, 119, 90, 0.349);
+  background-blend-mode: screen;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-height: 22rem;
 }
 
 ul {
   display: flex;
   list-style: none;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem ;
   margin: 0;
   
 }
 
 ul:nth-child(odd) {
-  background-color: lightgray;
+  background-color: rgba(209, 194, 153, 0.596);
+}
+
+hr {
+  width: 35%;
+  max-width: 7rem;
+  margin: 3rem auto 3rem auto;
+  border: 1px solid gray;
+  background-color: gray;
 }
 
 .addBook {
   display: flex;
   flex-direction: column;
   text-align: center;
-  max-width: 50%;
+  max-width: 18rem;
   align-items: center;
-  margin: auto;
-}
-
-hr {
-  width: 35%;
-  max-width: 7rem;
-  margin: 3rem auto 1rem auto;
-  border: 1px solid gray;
-  background-color: gray;
+  margin: auto auto 2rem auto;
+  padding-bottom: 1rem;
+  border-radius: 8px;
+  background-color: rgba(245, 209, 108, 0.664);
 }
 
 input {
@@ -47,17 +78,26 @@ input {
   max-width: 16rem;
   margin-bottom: 0.5rem;
   padding: 0.2rem;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
 
 button {
-  background-color: white;
   border: 2px solid black;
   border-radius: 5px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.644);
   padding: 0.25rem
 }
 
-button:hover {
-  background-color: rgba(211, 211, 211, 0.678);
+.remove-btn {
+  background-color: transparent;
+}
+
+.remove-btn:hover {
+  background-color: rgb(255, 196, 0);
+}
+
+.remove-btn:active {
+  background-color: rgb(255, 115, 0)
 }
