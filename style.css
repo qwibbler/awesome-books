@@ -13,17 +13,8 @@ h1 {
 ul {
   display: flex;
   list-style: none;
-  justify-content: center;
-}
-
-ul:last-child {
-  justify-self: center;
-
-}
-
-li {
-  display: flex;
-  
+  justify-content: space-between;
+  padding: 0.1rem 2rem 0 2rem;
 }
 
 .remove-btn {
