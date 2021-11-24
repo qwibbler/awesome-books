@@ -2,4 +2,31 @@
   box-sizing: border-box;
 }
 
+h1 {
+  text-align: center;
+}
+
+.books {
+  border: 2px solid black;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+ul:last-child {
+  justify-self: center;
+
+}
+
+li {
+  display: flex;
+  
+}
+
+.remove-btn {
+  
+}
 
