@@ -10,6 +10,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  font-size: 1.2rem;
 }
 
 
@@ -28,10 +29,12 @@ ul {
 
 /* HEADER */
 header {
+  position: fixed;
   display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
   flex-direction: column;
-  width: 100vw;
-  margin: 1rem auto;
   padding: 0.2rem 2rem;
   align-items: flex-end;
   border-radius: 8px;
@@ -60,11 +63,22 @@ nav hr {
   /* color: white; */
 }
 
-/* BOKS */
-.books {
+.section {
   display: flex;
   flex-direction: column;
+  position: fixed;
+  top: 6rem;
+  left: 0;
+  right: 0;
+  bottom: 5rem;
+  text-align: center;
   align-items: center;
+  margin: auto auto 2rem auto;
+  border-radius: 8px;
+}
+
+/* BOOKS */
+.books {
 }
 
 #bookList {
@@ -89,19 +103,33 @@ nav hr {
   background-color: rgba(209, 194, 153, 0.596);
 }
 
+button {
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.644);
+  padding: 0.25rem;
+}
+
+button:hover {
+  background-color: rgb(255, 196, 0);
+}
+
+button:active {
+  background-color: rgb(255, 115, 0);
+}
+
+/* Addbook */
 .addBook {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  margin: auto auto 2rem auto;
-  padding-bottom: 1rem;
-  border-radius: 8px;
   max-width: 28rem;
 }
 
-.addBook h2 {
-  margin-bottom: 6rem;
+.add-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(245, 209, 108, 0.664);
+  padding: 1rem;
+  border-radius: 8px;
 }
 
 input {
@@ -110,13 +138,6 @@ input {
   padding: 0.75rem;
   border: 2px solid black;
   border-radius: 5px;
-}
-
-button {
-  border: 2px solid black;
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.644);
-  padding: 0.25rem;
 }
 
 #addBtn {
@@ -129,27 +150,12 @@ button {
   background-color: transparent;
 }
 
-button:hover {
-  background-color: rgb(255, 196, 0);
-}
-
-button:active {
-  background-color: rgb(255, 115, 0);
-}
-
 #addBtn:active {
   background-color: rgb(172, 93, 28);
 }
 
 /* CONTACT */
 .contact {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  margin: auto auto 2rem auto;
-  padding-bottom: 1rem;
-  border-radius: 8px;
   max-width: 28rem;
 }
 
@@ -159,7 +165,7 @@ button:active {
   border-radius: 8px;
 }
 
-.contact p {
+p {
   margin: 0;
 }
 
@@ -174,4 +180,16 @@ button:active {
 /* SWITCH PLACES */
 .hidden {
   display: none;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(245, 209, 108, 0.664);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0 auto;
 }

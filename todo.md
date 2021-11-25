@@ -1,5 +1,3 @@
-date
-footer
 filter
 link/hover
 pg background
