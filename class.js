@@ -155,9 +155,9 @@ addBtn.addEventListener('click', () => {
     MyCollection.addBook(title.value, author.value);
     title.value = '';
     author.value = '';
-    smallVictory('Added!')
+    smallVictory('Added!');
   } else {
-    smallError('Please give a title for your book.')
+    smallError('Please give a title for your book.');
   }
 });
 
