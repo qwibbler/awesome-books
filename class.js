@@ -130,13 +130,13 @@ const addBtn = document.querySelector('#addBtn');
 addBtn.addEventListener('click', () => {
   if (title.value) {
     if (!author.value) {
-      author.value = 'Anonymous'
+      author.value = 'Anonymous';
     }
     MyCollection.addBook(title.value, author.value);
     title.value = '';
     author.value = '';
   } else {
-    alert('Please give a title for your book')
+    alert('Please give a title for your book'); //eslint-disable no-alert
   }
 });
 
@@ -165,5 +165,5 @@ function updateTime() {
   const dt = DateTime.now().toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
   dateTimeDiv.textContent = dt.toString();
 }
-updateTime()
+updateTime();
 setInterval(updateTime, 1000);
