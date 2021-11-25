@@ -125,6 +125,26 @@ MyCollection.printAll();
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const addBtn = document.querySelector('#addBtn');
+const small = document.querySelector('small');
+
+function smallErase() {
+  small.textContent = '';
+  small.classList = [];
+}
+
+function smallError(message) {
+  small.textContent = message;
+  small.classList = [];
+  small.classList.add('error');
+  setTimeout(smallErase, 2000);
+}
+
+function smallVictory(message) {
+  small.textContent = message;
+  small.classList = [];
+  small.classList.add('added');
+  setTimeout(smallErase, 2000);
+}
 
 // On click, add book to collection
 addBtn.addEventListener('click', () => {
@@ -135,8 +155,9 @@ addBtn.addEventListener('click', () => {
     MyCollection.addBook(title.value, author.value);
     title.value = '';
     author.value = '';
+    smallVictory('Added!');
   } else {
-    alert('Please give a title for your book'); // eslint-disable-line no-alert
+    smallError('Please give a title for your book.');
   }
 });
 
