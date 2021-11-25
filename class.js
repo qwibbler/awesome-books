@@ -127,3 +127,12 @@ function showPage(section) {
 showList.addEventListener('click', () => { showPage(booksSection) })
 addNew.addEventListener('click', () => { showPage(addBookSection) })
 contact.addEventListener('click', () => { showPage(contactSection) })
+
+// Add datetime
+console.log('DT');
+const DateTime = luxon.DateTime;
+const dt = DateTime.now();
+console.log('DT', dt);
+const dateTimeDiv = document.querySelector('.dateTime');
+
+dateTimeDiv.textContent = dt.toString();

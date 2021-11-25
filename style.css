@@ -27,10 +27,11 @@ ul {
 /* HEADER */
 header {
   display: flex;
+  flex-direction: column;
   width: 100vw;
   margin: 1rem auto;
   padding: 0.2rem 2rem;
-  justify-content: center;
+  align-items: flex-end;
   border-radius: 8px;
   background-color: rgba(245, 209, 108, 0.664);
 }
@@ -54,7 +55,7 @@ nav hr {
 }
 
 .dateTime {
-  color: red;
+  /* color: white; */
 }
 
 /* BOKS */
