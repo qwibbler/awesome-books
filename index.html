@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="./class.js" defer></script>
+  <script src="./luxon.js" defer></script>
   <link rel="stylesheet" href="./style.css">
   <title>Awesome Books</title>
 </head>
@@ -22,6 +23,7 @@
           <li id="contact"><a>Contact</a></li>
         </ul>
     </nav>
+    <div class="dateTime"></div>
   </header>
   
   <main>
@@ -38,13 +40,15 @@
 
     <section class="contact hidden">
       <h2>Contact Information</h2>
-      <p>If you have any questions or you just want say "Hello"</p>
-      <p>You can reach out to us!</p>
-      <ul>
-        <li>Our email: mail@mail.com</li>
-        <li>Our phone number: 312345678</li>
-        <li>Our address: Street avenide 5567 city,Country</li>
-      </ul>
+      <div id="contact-text">
+        <p>If you have any questions or you just want say "Hello"</p>
+        <p>You can reach out to us!</p>
+        <ul>
+          <li>Our email: mail@mail.com</li>
+          <li>Our phone number: 312345678</li>
+          <li>Our address: Street avenide 5567 city,Country</li>
+        </ul>
+    </div>
     </section>
   </main>
 </body>

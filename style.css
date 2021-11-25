@@ -42,6 +42,9 @@ nav hr {
 
 h2 {
   text-align: center;
+  background-color: rgba(245, 209, 108, 0.664);
+  padding: 1rem;
+  border-radius: 8px;
 }
 
 /* BOKS */
@@ -79,19 +82,21 @@ ul:nth-child(odd) {
   display: flex;
   flex-direction: column;
   text-align: center;
-  max-width: 18rem;
   align-items: center;
   margin: auto auto 2rem auto;
   padding-bottom: 1rem;
   border-radius: 8px;
-  background-color: rgba(245, 209, 108, 0.664);
+  max-width: 28rem;
+}
+
+.addBook h2 {
+  margin-bottom: 6rem;
 }
 
 input {
-  width: 75%;
-  max-width: 16rem;
-  margin-bottom: 0.5rem;
-  padding: 0.2rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
   border: 2px solid black;
   border-radius: 5px;
 }
@@ -101,6 +106,12 @@ button {
   border-radius: 5px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.644);
   padding: 0.25rem;
+}
+
+#addBtn {
+  padding: 0.75rem 2.5rem;
+  font-size: 1rem;
+  align-self: flex-end;
 }
 
 .remove-btn {
@@ -123,7 +134,12 @@ button:active {
 .contact {
   display: flex;
   flex-direction: column;
-  color: white;
+  text-align: center;
+  align-items: center;
+  margin: auto auto 2rem auto;
+  padding-bottom: 1rem;
+  border-radius: 8px;
+  max-width: 28rem;
 }
 
 .contact p {
@@ -135,6 +151,13 @@ button:active {
   align-items: flex-start;
   list-style: circle;
   padding-left: 2rem;
+  background: transparent; 
+}
+
+#contact-text {
+  background-color: rgba(245, 209, 108, 0.664);
+  padding: 1rem;
+  border-radius: 8px;
 }
 
 /* SWITCH PLACES */
