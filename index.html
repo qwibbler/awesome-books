@@ -15,11 +15,11 @@
     <nav>
       <h3>Awesome Books</h3>
         <ul>
-          <li><a>List</a></li>
+          <li id="showAll"><a>Show All</a></li>
           <li><hr></li>
-          <li><a>Add new</a></li>
+          <li id="addNew"><a>Add New</a></li>
           <li><hr></li>
-          <li><a>Contact</a></li>
+          <li id="contact"><a>Contact</a></li>
         </ul>
     </nav>
   </header>
@@ -29,14 +29,14 @@
       <h2>All Awesome Books</h2>
       <div id="bookList"></div>
     </section>
-    <section class="addBook">
+    <section class="addBook hidden">
       <h2>Add a new book</h2>
       <input type="text" id="title" placeholder="Title">
       <input type="text" id="author" placeholder="Author">
       <button type="button" id="addBtn">Add</button>
     </section>
 
-    <section class="contact">
+    <section class="contact hidden">
       <h2>Contact Information</h2>
       <p>If you have any questions or you just want say "Hello"</p>
       <p>You can reach out to us!</p>
