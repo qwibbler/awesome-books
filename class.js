@@ -61,8 +61,8 @@ class Collection {
       emptyBook.appendChild(emptyList);
       emptyList.appendChild(emptyItem);
       emptyList.id = 'empty';
-      emptyList.textContent = 'Please add a book to the collection from the form.'
-      booksWrapper.appendChild(emptyBook)
+      emptyList.textContent = 'Please add a book to the collection from the form.';
+      booksWrapper.appendChild(emptyBook);
     }
   }
 
@@ -112,7 +112,7 @@ class Collection {
     for (let i = 0; i < this.collection.length; i += 1) {
       this.printBook(this.collection[i]);
     }
-    this.printEmpty()
+    this.printEmpty();
   }
 }
 
@@ -128,6 +128,8 @@ const addBtn = document.querySelector('#addBtn');
 // On click, add book to collection
 addBtn.addEventListener('click', () => {
   MyCollection.addBook(title.value, author.value);
+  title.value = '';
+  author.value = '';
 });
 
 // Switch Pages
@@ -139,21 +141,21 @@ const addBookSection = document.querySelector('.addBook');
 const contactSection = document.querySelector('.contact');
 const sections = [booksSection, addBookSection, contactSection];
 function showPage(section) {
-  sections.filter(element => element !== section).forEach(element => {
+  sections.filter((element) => element !== section).forEach((element) => {
     element.classList.add('hidden');
   });
   section.classList.remove('hidden');
 }
-showList.addEventListener('click', () => { showPage(booksSection) })
-addNew.addEventListener('click', () => { showPage(addBookSection) })
-contact.addEventListener('click', () => { showPage(contactSection) })
+showList.addEventListener('click', () => { showPage(booksSection); });
+addNew.addEventListener('click', () => { showPage(addBookSection); });
+contact.addEventListener('click', () => { showPage(contactSection); });
 
 // Add datetime
-const DateTime = luxon.DateTime;
+const { DateTime } = luxon; // eslint-disable-line no-undef
 const dateTimeDiv = document.querySelector('.dateTime');
 function updateTime() {
   const dt = DateTime.now().toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
   dateTimeDiv.textContent = dt.toString();
   setTimeout(updateTime, 1000);
 }
-updateTime()
+updateTime();
