@@ -52,11 +52,20 @@ nav ul {
   gap: 1.5rem;
 }
 
+nav li:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
 nav hr {
   height: 1.5rem;
   margin: 0;
   border: 1px solid black;
   background-color: black;
+}
+
+h3 {
+  margin-left: 1rem;
 }
 
 .dateTime {
@@ -101,6 +110,10 @@ nav hr {
 
 #bookList ul:nth-child(odd) {
   background-color: rgba(209, 194, 153, 0.596);
+}
+
+#empty {
+  color: rgb(100, 98, 98);
 }
 
 button {
