@@ -1,4 +1,4 @@
-const booksWrapper = document.querySelector('.books');
+const booksWrapper = document.querySelector('#bookList');
 
 class Collection {
   constructor() {
@@ -109,3 +109,21 @@ const addBtn = document.querySelector('#addBtn');
 addBtn.addEventListener('click', () => {
   MyCollection.addBook(title.value, author.value);
 });
+
+// Switch Pages
+const showList = document.querySelector('#showAll');
+const addNew = document.querySelector('#addNew');
+const contact = document.querySelector('#contact');
+const booksSection = document.querySelector('.books');
+const addBookSection = document.querySelector('.addBook');
+const contactSection = document.querySelector('.contact');
+const sections = [booksSection, addBookSection, contactSection];
+function showPage(section) {
+  sections.filter(element => element !== section).forEach(element => {
+    element.classList.add('hidden');
+  });
+  section.classList.remove('hidden');
+}
+showList.addEventListener('click', () => { showPage(booksSection) })
+addNew.addEventListener('click', () => { showPage(addBookSection) })
+contact.addEventListener('click', () => { showPage(contactSection) })
