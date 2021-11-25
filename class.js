@@ -131,7 +131,7 @@ contact.addEventListener('click', () => { showPage(contactSection) })
 // Add datetime
 console.log('DT');
 const DateTime = luxon.DateTime;
-const dt = DateTime.now();
+const dt = DateTime.now().toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
 console.log('DT', dt);
 const dateTimeDiv = document.querySelector('.dateTime');
 
