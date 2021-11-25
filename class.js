@@ -53,6 +53,7 @@ class Collection {
     return [found, index];
   }
 
+  // If empty, print an empty message
   printEmpty() {
     if (this.collection.length === 0) {
       const emptyBook = document.createDocumentFragment();
@@ -127,9 +128,16 @@ const addBtn = document.querySelector('#addBtn');
 
 // On click, add book to collection
 addBtn.addEventListener('click', () => {
-  MyCollection.addBook(title.value, author.value);
-  title.value = '';
-  author.value = '';
+  if (title.value) {
+    if (!author.value) {
+      author.value = 'Anonymous'
+    }
+    MyCollection.addBook(title.value, author.value);
+    title.value = '';
+    author.value = '';
+  } else {
+    alert('Please give a title for your book')
+  }
 });
 
 // Switch Pages
