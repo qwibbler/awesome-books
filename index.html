@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./luxon.js" defer></script>
   <script src="./class.js" defer></script>
   <link rel="stylesheet" href="./style.css">
   <title>Awesome Books</title>
@@ -12,21 +13,54 @@
 
 <body>
   <header>
-    <h1>Awesome Books</h1>
+    <nav>
+      <h3>Awesome Books</h3>
+      <ul>
+        <li id="showAll"><a>Show All</a></li>
+        <li><hr></li>
+        <li id="addNew"><a>Add New</a></li>
+        <li><hr></li>
+        <li id="contact"><a>Contact</a></li>
+      </ul>
+    </nav>
+    <div class="dateTime"></div>
   </header>
-
+  
   <main>
-    <section class="books">
-      <h2>Books</h2>
+    <section class="section books">
+      <h2>All Awesome Books</h2>
+      <div id="bookList"></div>
     </section>
-    <hr>
-    <section class="addBook">
+    <section class="section addBook hidden">
       <h2>Add a new book</h2>
-      <input type="text" id="title" placeholder="Title">
-      <input type="text" id="author" placeholder="Author">
-      <button type="button" id="addBtn">Add</button>
+      <div class="add-form">
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="author" placeholder="Author">
+        <div id="btn">
+          <small></small>
+          <button type="button" id="addBtn">Add</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact hidden">
+      <h2>Contact Information</h2>
+      <div id="contact-text">
+        <p>If you have any questions or you just want say "Hello"</p>
+        <p>You can reach out to us!</p>
+        <ul id="contact-ul">
+          <li>Our email: mail@mail.com</li>
+          <li>Our phone number: 312345678</li>
+          <li>Our address: Street Avenide 5567 City, Country</li>
+        </ul>
+    </div>
     </section>
   </main>
+
+  <footer>
+    <p>Copyleft &copy;, All rights reversed.</p>
+    <p>Jose Herrera and Humaira Zaman</p>
+  </footer>
 </body>
 
 </html>
