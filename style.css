@@ -150,10 +150,13 @@ input {
   border-radius: 5px;
 }
 
+#btn {
+  align-self: flex-end;
+}
+
 #addBtn {
   padding: 0.75rem 2.5rem;
   font-size: 1rem;
-  align-self: flex-end;
 }
 
 .remove-btn {
@@ -162,6 +165,27 @@ input {
 
 #addBtn:active {
   background-color: rgb(172, 93, 28);
+}
+
+small {
+  border-radius: 3px;
+  font-size: 0.8rem;
+  align-self: flex-end;
+  margin-top: 1rem;
+  padding: 0.2rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.error {
+  color: red;
+  background-color: rgb(255, 196, 0);
+  border: 1px solid red;
+}
+
+.added {
+  color: green;
+  background-color: rgb(187, 255, 0);
+  border: 1px solid green;
 }
 
 /* CONTACT */
