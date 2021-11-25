@@ -142,6 +142,12 @@ button:active {
   max-width: 28rem;
 }
 
+#contact-text {
+  background-color: rgba(245, 209, 108, 0.664);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
 .contact p {
   margin: 0;
 }
@@ -152,12 +158,6 @@ button:active {
   list-style: circle;
   padding-left: 2rem;
   background: transparent; 
-}
-
-#contact-text {
-  background-color: rgba(245, 209, 108, 0.664);
-  padding: 1rem;
-  border-radius: 8px;
 }
 
 /* SWITCH PLACES */
