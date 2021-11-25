@@ -89,7 +89,7 @@ h3 {
 #bookList {
   border: 2px solid black;
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
   overflow-y: auto;
   background: url(../img/background_parchment.jpg) center no-repeat;
   background-size: cover;

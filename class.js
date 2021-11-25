@@ -136,7 +136,7 @@ addBtn.addEventListener('click', () => {
     title.value = '';
     author.value = '';
   } else {
-    alert('Please give a title for your book'); //eslint-disable no-alert
+    alert('Please give a title for your book'); // eslint-disable-line no-alert
   }
 });
 
