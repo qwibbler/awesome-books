@@ -110,3 +110,11 @@ const addBtn = document.querySelector('#addBtn');
 addBtn.addEventListener('click', () => {
   addBook(title.value, author.value);
 });
+
+// Add datetime
+const DateTime = luxon.DateTime;
+const dt = DateTime.now();
+console.log(dt);
+const dateTimeDiv = document.querySelector('.dateTime');
+
+dateTimeDiv.textContent = dt.toString();

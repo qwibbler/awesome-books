@@ -10,6 +10,20 @@ body {
   min-height: 100vh;
 }
 
+
+h2 {
+  text-align: center;
+  background-color: rgba(245, 209, 108, 0.664);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
 /* HEADER */
 header {
   display: flex;
@@ -19,7 +33,6 @@ header {
   justify-content: center;
   border-radius: 8px;
   background-color: rgba(245, 209, 108, 0.664);
-
 }
 
 nav {
@@ -40,11 +53,8 @@ nav hr {
   background-color: black;
 }
 
-h2 {
-  text-align: center;
-  background-color: rgba(245, 209, 108, 0.664);
-  padding: 1rem;
-  border-radius: 8px;
+.dateTime {
+  color: red;
 }
 
 /* BOKS */
@@ -65,16 +75,14 @@ h2 {
   border-radius: 4px;
 }
 
-ul {
-  display: flex;
-  list-style: none;
+#bookList ul {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   margin: 0;
 }
 
-ul:nth-child(odd) {
+#bookList ul:nth-child(odd) {
   background-color: rgba(209, 194, 153, 0.596);
 }
 
@@ -157,7 +165,7 @@ button:active {
   align-items: flex-start;
   list-style: circle;
   padding-left: 2rem;
-  background: transparent; 
+  background: transparent;
 }
 
 /* SWITCH PLACES */
