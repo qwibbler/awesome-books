@@ -3,8 +3,7 @@
 }
 
 body {
-  background: url(./img/library_background.jpg), rgba(245, 208, 108, 0.103);
-  background-blend-mode: lighten;
+  background: url(./img/library_background.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,7 +40,7 @@ nav hr {
   background-color: black;
 }
 
-h1 {
+h2 {
   text-align: center;
 }
 
@@ -120,7 +119,25 @@ button:active {
   background-color: rgb(172, 93, 28);
 }
 
-.Contact {
+/* CONTACT */
+.contact {
+  display: flex;
+  flex-direction: column;
   color: white;
-  text-align: center
+}
+
+.contact p {
+  margin: 0;
+}
+
+.contact ul {
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: circle;
+  padding-left: 2rem;
+}
+
+/* SWITCH PLACES */
+.hidden {
+  display: none;
 }
