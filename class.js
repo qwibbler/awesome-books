@@ -65,23 +65,20 @@ class Collection {
     // Create elements
     const eachBook = document.createDocumentFragment();
     const eachList = document.createElement('ul');
-    const eachTitle = document.createElement('li');
-    const eachAuthor = document.createElement('li');
+    const eachTitleAndAuthor = document.createElement('li');
     const eachRemove = document.createElement('li');
     const removeBtn = document.createElement('button');
 
     // Append elements
     eachBook.appendChild(eachList);
-    eachList.appendChild(eachTitle);
+    eachList.appendChild(eachTitleAndAuthor);
     eachList.id = `${book.id}`;
-    eachList.appendChild(eachAuthor);
     eachList.appendChild(eachRemove);
     eachRemove.appendChild(removeBtn);
     booksWrapper.appendChild(eachBook);
 
     // Add values
-    eachTitle.textContent = book.title;
-    eachAuthor.textContent = book.author;
+    eachTitleAndAuthor.textContent = `${book.title} by ${book.author}`;
     removeBtn.textContent = 'Remove';
     removeBtn.className = 'remove-btn';
 

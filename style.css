@@ -1,3 +1,103 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  background: url(./img/library_background.jpg), rgba(245, 208, 108, 0.103);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  width: max-content;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: rgba(245, 209, 108, 0.664);
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.books {
+  border: 2px solid black;
+  width: 90%;
+  margin: auto;
+  overflow-y: auto;
+  background: url(../img/background_parchment.jpg) center no-repeat;
+  background-size: cover;
+  max-height: 22rem;
+  border-radius: 4px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+ul:nth-child(odd) {
+  background-color: rgba(209, 194, 153, 0.596);
+}
+
+hr {
+  width: 35%;
+  max-width: 7rem;
+  margin: 3rem auto 3rem auto;
+  border: 1px solid gray;
+  background-color: gray;
+}
+
+.addBook {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 18rem;
+  align-items: center;
+  margin: auto auto 2rem auto;
+  padding-bottom: 1rem;
+  border-radius: 8px;
+  background-color: rgba(245, 209, 108, 0.664);
+}
+
+input {
+  width: 75%;
+  max-width: 16rem;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+button {
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.644);
+  padding: 0.25rem;
+}
+
+.remove-btn {
+  background-color: transparent;
+}
+
+button:hover {
+  background-color: rgb(255, 196, 0);
+}
+
+button:active {
+  background-color: rgb(255, 115, 0);
+}
+
+#addBtn:active {
+  background-color: rgb(172, 93, 28);
+}
