@@ -81,6 +81,10 @@ h3 {
   border-radius: 8px;
 }
 
+.dateTime {
+  font-size: .8rem;
+}
+
 /* BOOKS */
 #bookList {
   border: 2px solid black;

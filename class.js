@@ -156,6 +156,6 @@ const dateTimeDiv = document.querySelector('.dateTime');
 function updateTime() {
   const dt = DateTime.now().toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
   dateTimeDiv.textContent = dt.toString();
-  setTimeout(updateTime, 1000);
 }
-updateTime();
+updateTime()
+setInterval(updateTime, 1000);
