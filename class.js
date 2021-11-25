@@ -129,10 +129,11 @@ addNew.addEventListener('click', () => { showPage(addBookSection) })
 contact.addEventListener('click', () => { showPage(contactSection) })
 
 // Add datetime
-console.log('DT');
 const DateTime = luxon.DateTime;
-const dt = DateTime.now().toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
-console.log('DT', dt);
 const dateTimeDiv = document.querySelector('.dateTime');
-
-dateTimeDiv.textContent = dt.toString();
+function updateTime() {
+  const dt = DateTime.now().toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
+  dateTimeDiv.textContent = dt.toString();
+  setTimeout(updateTime, 1000);
+}
+updateTime()
